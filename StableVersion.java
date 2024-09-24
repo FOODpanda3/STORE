@@ -21,7 +21,7 @@ public class JavaApplication14 {
     public static String again;
     public static int chooce, quantity = 1;
     public static double total = 0, pay;
-    public static char ril;
+    
     /**
      */
     public static void menu() {
