@@ -60,6 +60,11 @@ public class JavaApplication14 {
             } 
                 again = input.next();
                 System.out.println("Enter Payment");
+                  while(!input.hasNextInt()){
+               System.out.println("System Error Input number only!");
+                input.next();
+                
+            }
                  pay = input.nextDouble();
                 if (again.equalsIgnoreCase("Y")) {
                 order();
@@ -105,6 +110,11 @@ public class JavaApplication14 {
                 System.out.println("If Yes select Y and if NO selectt N");
                 again = input.next();
                 System.out.println("Enter Payment");
+                  while(!input.hasNextInt()){
+               System.out.println("System Error Input number only!");
+                input.next();
+                
+            }
                 pay = input.nextDouble();
                  System.out.println("DO you Want to Buy More?");
                 if (again.equalsIgnoreCase("Y")) {
@@ -151,6 +161,11 @@ public class JavaApplication14 {
                 System.out.println("If Yes select Y and if NO selectt N");
                 again = input.next();
                 System.out.println("Enter Payment");
+                  while(!input.hasNextInt()){
+               System.out.println("System Error Input number only!");
+                input.next();
+                
+            }
                 pay = input.nextDouble();
                 again = input.next();
                 if (again.equalsIgnoreCase("Y")) {
@@ -197,6 +212,11 @@ public class JavaApplication14 {
                 System.out.println("If Yes select Y and if NO selectt N");
                 again = input.next();
                 System.out.println("Enter Payment");
+                  while(!input.hasNextInt()){
+               System.out.println("System Error Input number only!");
+                input.next();
+                
+            }
                 pay = input.nextDouble();
                 System.out.println("DO you Want to Buy More?");
                 System.out.println("If Yes select Y and if NO selectt N");
@@ -245,6 +265,11 @@ public class JavaApplication14 {
                 System.out.println("If Yes select Y and if NO selectt N");
                 again = input.next();
                 System.out.println("Enter Payment");
+                  while(!input.hasNextInt()){
+               System.out.println("System Error Input number only!");
+                input.next();
+                
+            }
                 pay = input.nextDouble();
                 System.out.println("DO you Want to Buy More?");
                 System.out.println("If Yes select Y and if NO selectt N");
@@ -284,6 +309,11 @@ public class JavaApplication14 {
             System.out.println("1 to 6 only");
             order();
                 System.out.println("Enter Payment");
+            while(!input.hasNextInt()){
+               System.out.println("System Error Input number only!");
+                input.next();
+                
+            }
                 pay = input.nextDouble();
                 if (pay <= total) {
                     System.out.println("Not enought PAYMENT");
@@ -331,5 +361,4 @@ public class JavaApplication14 {
     }
 
 }
-
 
