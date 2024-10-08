@@ -31,12 +31,12 @@ public class JavaApplication14 {
             
             if (chooce == 6) {
                 if (total > 0) {
-                    int confirmExit = JOptionPane.showConfirmDialog(null, "You have an order in progress. Do you want to proceed to payment?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
+                    int confirmExit = JOptionPane.showConfirmDialog(null, " order in progress. Do you want to proceed to payment?", "Exit", JOptionPane.YES_NO_OPTION);
                     if (confirmExit == JOptionPane.YES_OPTION) {
                         processPayment();
                     } else {
-                        JOptionPane.showMessageDialog(null, "Order canceled. Exiting.");
-                        System.exit(0); // Exit the application
+                        JOptionPane.showMessageDialog(null, "Order canceled.");
+                        System.exit(0); 
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Thank you for visiting! Goodbye!");
@@ -95,7 +95,7 @@ public class JavaApplication14 {
                 attempts++;
             }
         }
-        JOptionPane.showMessageDialog(null, "Too many invalid attempts. Exiting.");
+        JOptionPane.showMessageDialog(null, "Too many invalid attempts.");
         System.exit(0);
         return -1; 
     }
@@ -111,7 +111,7 @@ public class JavaApplication14 {
                 attempts++;
             }
         }
-        JOptionPane.showMessageDialog(null, "Too many invalid attempts. Exiting.");
+        JOptionPane.showMessageDialog(null, "Too many invalid attempts.");
         System.exit(0);
         return -1; 
     }
@@ -126,7 +126,7 @@ public class JavaApplication14 {
                 if (amount >= total) {
                     break; 
                 } else {
-                    JOptionPane.showMessageDialog(null, "Not enough PAYMENT. Balance: " + (total - amount));
+                    JOptionPane.showMessageDialog(null, "Not enough Balance: " + (total - amount));
                 }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Please enter a valid payment amount.");
@@ -135,7 +135,7 @@ public class JavaApplication14 {
         }
 
         if (amount < total) {
-            JOptionPane.showMessageDialog(null, "Too many invalid attempts. Exiting.");
+            JOptionPane.showMessageDialog(null, "Too many invalid attempts. ");
             System.exit(0);
         }
 
@@ -166,7 +166,7 @@ public class JavaApplication14 {
         if (confirm == JOptionPane.OK_OPTION) {
             JOptionPane.showMessageDialog(null, "Thank you for confirming!");
         } else {
-            JOptionPane.showMessageDialog(null, "You chose to cancel the confirmation. Exiting.");
+            JOptionPane.showMessageDialog(null, "You chose to cancel the confirmation.");
             System.exit(0); 
         }
     }
