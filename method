@@ -1,0 +1,135 @@
+package method;
+
+import javax.swing.*;
+
+public class Method {
+
+    public static void main(String[] args) {
+        String[] options = {"Power", "Sum", "Find Max", "Find Min", "Compute Average", "Exit"};
+        while (true) {
+            int choice = JOptionPane.showOptionDialog(null, "Choose an operation:", 
+                    "Calculator", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
+            switch (choice) {
+                case 0: 
+                    powermethod();
+                    break;
+                case 1: 
+                    ComputeSum();
+                    break;
+                case 2: 
+                    FindMax();
+                    break;
+                case 3: 
+                    FindMin();
+                    break;
+                case 4: 
+                    ComputeAve();
+                    break;
+                case 5: 
+                    JOptionPane.showMessageDialog(null, "Goodbye!");
+                    System.exit(0);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static void powermethod() {
+        String baseInput = JOptionPane.showInputDialog("Enter Base:");
+        int base = Integer.parseInt(baseInput);
+        String exponentInput = JOptionPane.showInputDialog("Enter Exponent:");
+        int exponent = Integer.parseInt(exponentInput);
+        int total = power(base, exponent);
+        JOptionPane.showMessageDialog(null, "Total: " + total);
+    }
+
+    static int power(int base, int exponent) {
+        int result = 1;
+        for (int i = 0; i < exponent; i++) {
+            result *= base;
+        }
+        return result;
+    }
+
+    public static void ComputeSum() {
+        String input = JOptionPane.showInputDialog("Enter how many numbers you want to sum:");
+        int count = Integer.parseInt(input);
+        int total = sum(count);
+        JOptionPane.showMessageDialog(null, "Total Sum: " + total);
+    }
+
+    static int sum(int count) {
+        int[] numbers = new int[count];
+        int y = 0;
+        for (int i = 0; i < count; i++) {
+            String valueInput = JOptionPane.showInputDialog("Enter Value " + (i + 1) + ":");
+            numbers[i] = Integer.parseInt(valueInput);
+            y += numbers[i];
+        }
+        return y;
+    }
+
+    public static void FindMax() {
+        String input = JOptionPane.showInputDialog("Enter how many numbers you want to check:");
+        int count = Integer.parseInt(input);
+        int max = FindMax(count);
+        JOptionPane.showMessageDialog(null, "The maximum number is: " + max);
+    }
+
+    static int FindMax(int count) {
+        int[] numbers = new int[count];
+        for (int i = 0; i < count; i++) {
+            String valueInput = JOptionPane.showInputDialog("Enter Value " + (i + 1) + ":");
+            numbers[i] = Integer.parseInt(valueInput);
+        }
+
+        int max = numbers[0];
+        for (int num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+
+    public static void FindMin() {
+        String input = JOptionPane.showInputDialog("Enter how many numbers you want to check:");
+        int count = Integer.parseInt(input);
+        int min = FindMin(count);
+        JOptionPane.showMessageDialog(null, "The minimum number is: " + min);
+    }
+
+    static int FindMin(int count) {
+        int[] numbers = new int[count];
+        for (int i = 0; i < count; i++) {
+            String valueInput = JOptionPane.showInputDialog("Enter Value " + (i + 1) + ":");
+            numbers[i] = Integer.parseInt(valueInput);
+        }
+
+        int min = numbers[0];
+        for (int num : numbers) {
+            if (num < min) {
+                min = num;
+            }
+        }
+        return min;
+    }
+
+    public static void ComputeAve() {
+        String input = JOptionPane.showInputDialog("Enter how many numbers you want to average:");
+        int count = Integer.parseInt(input);
+        float average = computeAve(count);
+        JOptionPane.showMessageDialog(null, "Average: " + average);
+    }
+
+    static float computeAve(int count) {
+        int sum = 0;
+        for (int i = 0; i < count; i++) {
+            String valueInput = JOptionPane.showInputDialog("Enter Value " + (i + 1) + ":");
+            sum += Integer.parseInt(valueInput);
+        }
+        return (float) sum / count;
+    }
+}
