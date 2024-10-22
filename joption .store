@@ -24,19 +24,19 @@ public class JavaApplication14 {
     }
 
     public static void order() {
-        customerCount++; 
+        customerCount++;
         while (true) {
             menu(); 
             chooce = getUserChoice("Press the coordinate numbers to select items\nWhat do you want to Buy?");
             
             if (chooce == 6) {
                 if (total > 0) {
-                    int confirmExit = JOptionPane.showConfirmDialog(null, " order in progress. Do you want to proceed to payment?", "Exit", JOptionPane.YES_NO_OPTION);
+                    int confirmExit = JOptionPane.showConfirmDialog(null, "Order in progress. Do you want to proceed to payment?", "Exit", JOptionPane.YES_NO_OPTION);
                     if (confirmExit == JOptionPane.YES_OPTION) {
                         processPayment();
                     } else {
                         JOptionPane.showMessageDialog(null, "Order canceled.");
-                        System.exit(0); 
+                        continue; // Go back to the menu
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Thank you for visiting! Goodbye!");
@@ -65,10 +65,18 @@ public class JavaApplication14 {
                     continue; 
             }
 
-           
             int confirm = JOptionPane.showConfirmDialog(null, "Do you want to buy more?", "Confirm", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.NO_OPTION) {
                 processPayment();
+                int continueShopping = JOptionPane.showConfirmDialog(null, "Do you want to make another purchase?", "Continue Shopping", JOptionPane.YES_NO_OPTION);
+                if (continueShopping == JOptionPane.NO_OPTION) {
+                    JOptionPane.showMessageDialog(null, "Thank you for visiting! Goodbye!");
+                    System.exit(0);
+                } else {
+                    total = 0; // Reset total for new session
+                    orderedItems.clear();
+                    orderedPrices.clear();
+                }
             }
         }
     }
@@ -142,7 +150,6 @@ public class JavaApplication14 {
         double change = amount - total;
         JOptionPane.showMessageDialog(null, "Total Price: " + total + "\nChange: " + change + "\nPayment Successful!");
 
-       
         total = 0;
         orderedItems.clear();
         orderedPrices.clear();
