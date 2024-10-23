@@ -1,0 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package javaapplication3;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Jassen
+ */
+public class JavaApplication3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+  
+    }
+   public static void circle(){
+    Scanner nok= new Scanner (System.in);
+    System.out.println("ENTER RADIUS");
+    double radius= nok.nextInt();
+    System.out.println("Area of a circle:"+Math.PI*Math.pow(radius, 2));
+   }
+   public static void rectangle(){
+   Scanner nok= new Scanner (System.in);
+    System.out.println("Enter lenght:");
+    int lenght=nok.nextInt();
+    System.out.println("Enter width:");
+    int width=nok.nextInt();
+    int area=lenght*width;
+    System.out.println("Area of a rectangle"+area);
+   }
+   public static void triangle(){
+   Scanner nok= new Scanner (System.in);
+   int b,h;
+   double a=0.5,Area;
+   System.out.println("Enter base:");
+   b=nok.nextInt();
+   System.out.println("Enter height:");
+   h=nok.nextInt();
+   Area=a*b*h;
+   System.out.println("Area of triangle:"+Area);
+   }
+   public static void sphere(){
+   Scanner nok= new Scanner (System.in);
+   double r,v;
+   System.out.println("enter radius:");
+   r=nok.nextDouble();
+   v=4.0/3.0*Math.PI*r*r*r;
+   System.out.println("Volume of Sphere:"+v);
+   }
+   public static void Cylinder(){
+   
+   }
+}
