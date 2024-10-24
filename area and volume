@@ -5,6 +5,7 @@
 package javaapplication3;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,43 +17,86 @@ public class JavaApplication3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-  
+        String[] options = {"Circle", "rectangle", "triangle", "sphere", "Cylinder", "Exit"};
+        while (true) {
+            int choice = JOptionPane.showOptionDialog(null, "Choose an operation:",
+                    "Calculator", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
+            switch (choice) {
+                case 0:
+                    circle();
+                    break;
+                case 1:
+                    rectangle();
+                    break;
+                case 2:
+                    triangle();
+                    break;
+                case 3:
+                    sphere();
+                    break;
+                case 4:
+                    Cylinder();
+                    break;
+                case 5:
+                    JOptionPane.showMessageDialog(null, "Goodbye!");
+                    System.exit(0);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
-   public static void circle(){
-    Scanner nok= new Scanner (System.in);
-    System.out.println("ENTER RADIUS");
-    double radius= nok.nextInt();
-    System.out.println("Area of a circle:"+Math.PI*Math.pow(radius, 2));
-   }
-   public static void rectangle(){
-   Scanner nok= new Scanner (System.in);
-    System.out.println("Enter lenght:");
-    int lenght=nok.nextInt();
-    System.out.println("Enter width:");
-    int width=nok.nextInt();
-    int area=lenght*width;
-    System.out.println("Area of a rectangle"+area);
-   }
-   public static void triangle(){
-   Scanner nok= new Scanner (System.in);
-   int b,h;
-   double a=0.5,Area;
-   System.out.println("Enter base:");
-   b=nok.nextInt();
-   System.out.println("Enter height:");
-   h=nok.nextInt();
-   Area=a*b*h;
-   System.out.println("Area of triangle:"+Area);
-   }
-   public static void sphere(){
-   Scanner nok= new Scanner (System.in);
-   double r,v;
-   System.out.println("enter radius:");
-   r=nok.nextDouble();
-   v=4.0/3.0*Math.PI*r*r*r;
-   System.out.println("Volume of Sphere:"+v);
-   }
-   public static void Cylinder(){
-   
-   }
+
+    public static void circle() {
+        String input = JOptionPane.showInputDialog("ENTER RADIUS");
+        double radius = Double.parseDouble(input);
+        double area = Math.PI * Math.pow(radius, 2);
+        JOptionPane.showMessageDialog(null, "Area of a circle: " + area);
+    }
+
+    public static void rectangle() {
+        String lenghtinput = JOptionPane.showInputDialog("ENTER Lenght");
+        double length = Double.parseDouble(lenghtinput);
+        var widthinput = JOptionPane.showInputDialog("ENTER Width");
+        double width = Double.parseDouble(widthinput);
+        JOptionPane.showMessageDialog(null, "Area of a rectangle2: " + length * width);
+    }
+
+    public static void triangle() {
+        Scanner nok = new Scanner(System.in);
+        double a = 0.5;
+        String baseinput = JOptionPane.showInputDialog("ENTER Base");
+        double base = Double.parseDouble(baseinput);
+        String heightinput = JOptionPane.showInputDialog("ENTER Height");
+        double height = Double.parseDouble(heightinput);
+        JOptionPane.showMessageDialog(null, "Area of triangle:" + a * base * height);
+    }
+
+    public static void sphere() {
+        double v;
+        String radiusinput = JOptionPane.showInputDialog("ENTER radius");
+        double radius = Double.parseDouble(radiusinput);
+        v = 4.0 / 3.0 * Math.PI * Math.pow(radius, 3);
+        JOptionPane.showMessageDialog(null, "Volume of Sphere:" + v);
+    }
+
+    public static void Cylinder() {
+        String radiusinput = JOptionPane.showInputDialog("ENTER radius");
+        double radius = Double.parseDouble(radiusinput);
+        String heightinput = JOptionPane.showInputDialog("ENTER Height");
+        double height = Double.parseDouble(heightinput);
+        JOptionPane.showMessageDialog(null, "Volume of cylinder:" + Math.PI * Math.pow(radius, 2) * height);
+    }
+
+    public static void sideoftriangle(double a, double b, double c) {
+    String Ainput = JOptionPane.showInputDialog("ENTER A");
+        double A = Double.parseDouble(Ainput);
+        String Binput = JOptionPane.showInputDialog("ENTER B");
+        double B = Double.parseDouble(Binput);
+        String Cinput = JOptionPane.showInputDialog("Enter C");
+        double C = Double.parseDouble(Cinput);
+        double V = Math.sqrt(B*B+A*A-2*A*B*Math.cos(C));
+        JOptionPane.showMessageDialog(null, "Sides:" + V);
+    }
 }
