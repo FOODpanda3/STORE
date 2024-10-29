@@ -1,42 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package javaapplication3;
 
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Jassen
- */
 public class JavaApplication3 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        String[] options = {"Circle", "rectangle", "triangle", "sphere", "Cylinder", "Exit"};
+        String[] options = {"Circle", "Rectangle", "Triangle", "Sphere", "Cylinder", "Exit"};
         while (true) {
             int choice = JOptionPane.showOptionDialog(null, "Choose an operation:",
                     "Calculator", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
             switch (choice) {
                 case 0:
-                    circle();
+                    circleOptions();
                     break;
                 case 1:
-                    rectangle();
+                    rectangleArea();
                     break;
                 case 2:
-                    triangle();
+                    triangleOptions();
                     break;
                 case 3:
-                    sphere();
+                    sphereOptions();
                     break;
                 case 4:
-                    Cylinder();
+                    cylinderVolume();
                     break;
                 case 5:
                     JOptionPane.showMessageDialog(null, "Goodbye!");
@@ -48,55 +36,204 @@ public class JavaApplication3 {
         }
     }
 
+    public static void circleOptions() {
+        String[] circleOptions = {"Area", "Circumference", "Circle Segment"};
+        int choice = JOptionPane.showOptionDialog(null, "Choose a calculation for the circle:",
+                "Circle Calculations", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, circleOptions, circleOptions[0]);
+
+        switch (choice) {
+            case 0:
+                circle();
+                break;
+            case 1:
+                circumference();
+                break;
+            case 2:
+                circleSegment();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public static void triangleOptions() {
+        String[] triangleOptions = {"Triangle Area", "Sides of Triangle"};
+        int choice = JOptionPane.showOptionDialog(null, "Choose a calculation for triangle:",
+                "Triangle Calculations", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, triangleOptions, triangleOptions[0]);
+
+        switch (choice) {
+            case 0:
+                triangleArea();
+                break;
+            case 1:
+                sideOfTriangle();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public static void sphereOptions() {
+        String[] sphereOptions = {"Sphere Volume", "Surface Area"};
+        int choice = JOptionPane.showOptionDialog(null, "Choose a calculation for Sphere:",
+                "Sphere Calculations", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, sphereOptions, sphereOptions[0]);
+
+        switch (choice) {
+            case 0:
+                sphereVolume();
+                break;
+            case 1:
+                surfaceAreaSphere();
+                break;
+            default:
+                break;
+        }
+    }
+
     public static void circle() {
         String input = JOptionPane.showInputDialog("ENTER RADIUS");
+        if (input == null) { 
+            if (confirmExit()) return;
+        }
         double radius = Double.parseDouble(input);
         double area = Math.PI * Math.pow(radius, 2);
-        JOptionPane.showMessageDialog(null, "Area of a circle: " + area);
+        JOptionPane.showMessageDialog(null, "Area of the circle: " + String.format("%.2f", area));
+        AnotherCalculation();
     }
 
-    public static void rectangle() {
-        String lenghtinput = JOptionPane.showInputDialog("ENTER Lenght");
-        double length = Double.parseDouble(lenghtinput);
-        var widthinput = JOptionPane.showInputDialog("ENTER Width");
-        double width = Double.parseDouble(widthinput);
-        JOptionPane.showMessageDialog(null, "Area of a rectangle2: " + length * width);
+    public static void circumference() {
+        String input = JOptionPane.showInputDialog("ENTER RADIUS");
+        if (input == null) { 
+            if (confirmExit()) return;
+        }
+        double radius = Double.parseDouble(input);
+        double circumference = 2 * Math.PI * radius;
+        JOptionPane.showMessageDialog(null, "Circumference of the circle: " + String.format("%.2f", circumference));
+       AnotherCalculation();
     }
 
-    public static void triangle() {
-        Scanner nok = new Scanner(System.in);
-        double a = 0.5;
-        String baseinput = JOptionPane.showInputDialog("ENTER Base");
-        double base = Double.parseDouble(baseinput);
-        String heightinput = JOptionPane.showInputDialog("ENTER Height");
-        double height = Double.parseDouble(heightinput);
-        JOptionPane.showMessageDialog(null, "Area of triangle:" + a * base * height);
+    public static void rectangleArea() {
+        String lengthInput = JOptionPane.showInputDialog("ENTER LENGTH");
+        if (lengthInput == null) { 
+            if (confirmExit()) return;
+        }
+        double length = Double.parseDouble(lengthInput);
+        
+        String widthInput = JOptionPane.showInputDialog("ENTER WIDTH");
+        if (widthInput == null) { 
+            if (confirmExit()) return;
+        }
+        double width = Double.parseDouble(widthInput);
+        JOptionPane.showMessageDialog(null, "Area of the rectangle: " + String.format("%.2f", length * width));
+        AnotherCalculation();
     }
 
-    public static void sphere() {
-        double v;
-        String radiusinput = JOptionPane.showInputDialog("ENTER radius");
-        double radius = Double.parseDouble(radiusinput);
-        v = 4.0 / 3.0 * Math.PI * Math.pow(radius, 3);
-        JOptionPane.showMessageDialog(null, "Volume of Sphere:" + v);
+    public static void triangleArea() {
+        String baseInput = JOptionPane.showInputDialog("ENTER BASE");
+        if (baseInput == null) { 
+            if (confirmExit()) return;
+        }
+        double base = Double.parseDouble(baseInput);
+        
+        String heightInput = JOptionPane.showInputDialog("ENTER HEIGHT");
+        if (heightInput == null) { 
+            if (confirmExit()) return;
+        }
+        double height = Double.parseDouble(heightInput);
+        JOptionPane.showMessageDialog(null, "Area of triangle: " + String.format("%.2f", 0.5 * base * height));
+       AnotherCalculation();
     }
 
-    public static void Cylinder() {
-        String radiusinput = JOptionPane.showInputDialog("ENTER radius");
-        double radius = Double.parseDouble(radiusinput);
-        String heightinput = JOptionPane.showInputDialog("ENTER Height");
-        double height = Double.parseDouble(heightinput);
-        JOptionPane.showMessageDialog(null, "Volume of cylinder:" + Math.PI * Math.pow(radius, 2) * height);
+    public static void sphereVolume() {
+        String radiusInput = JOptionPane.showInputDialog("ENTER RADIUS");
+        if (radiusInput == null) {
+            if (confirmExit()) return;
+        }
+        double radius = Double.parseDouble(radiusInput);
+        double volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+        JOptionPane.showMessageDialog(null, "Volume of Sphere: " + String.format("%.2f", volume));
+        AnotherCalculation();
     }
 
-    public static void sideoftriangle(double a, double b, double c) {
-    String Ainput = JOptionPane.showInputDialog("ENTER A");
-        double A = Double.parseDouble(Ainput);
-        String Binput = JOptionPane.showInputDialog("ENTER B");
-        double B = Double.parseDouble(Binput);
-        String Cinput = JOptionPane.showInputDialog("Enter C");
-        double C = Double.parseDouble(Cinput);
-        double V = Math.sqrt(B*B+A*A-2*A*B*Math.cos(C));
-        JOptionPane.showMessageDialog(null, "Sides:" + V);
+    public static void cylinderVolume() {
+        String radiusInput = JOptionPane.showInputDialog("ENTER RADIUS");
+        if (radiusInput == null) { 
+            if (confirmExit()) return;
+        }
+        double radius = Double.parseDouble(radiusInput);
+        
+        String heightInput = JOptionPane.showInputDialog("ENTER HEIGHT");
+        if (heightInput == null) { 
+            if (confirmExit()) return;
+        }
+        double height = Double.parseDouble(heightInput);
+        JOptionPane.showMessageDialog(null, "Volume of cylinder: " + String.format("%.2f", Math.PI * Math.pow(radius, 2) * height));
+       AnotherCalculation();
+    }
+
+    public static void sideOfTriangle() {
+        String aInput = JOptionPane.showInputDialog("ENTER A");
+        if (aInput == null) {
+            if (confirmExit()) return;
+        }
+        double A = Double.parseDouble(aInput);
+        
+        String bInput = JOptionPane.showInputDialog("ENTER B");
+        if (bInput == null) { 
+            if (confirmExit()) return;
+        }
+        double B = Double.parseDouble(bInput);
+        
+        String cInput = JOptionPane.showInputDialog("ENTER C");
+        if (cInput == null) { 
+            if (confirmExit()) return;
+        }
+        double C = Double.parseDouble(cInput);
+        double side = Math.sqrt(B * B + A * A - 2 * A * B * Math.cos(Math.toRadians(C)));
+        JOptionPane.showMessageDialog(null, "Side: " + String.format("%.2f", side));
+        AnotherCalculation();
+    }
+
+    public static void circleSegment() {
+        String rInput = JOptionPane.showInputDialog("Enter Radius");
+        if (rInput == null) { 
+            if (confirmExit()) return;
+        }
+        double R = Double.parseDouble(rInput);
+        
+        String angleInput = JOptionPane.showInputDialog("Enter Angle");
+        if (angleInput == null) { 
+            if (confirmExit()) return;
+        }
+        double A = Double.parseDouble(angleInput);
+        double angleRadians = Math.toRadians(A);
+        double area = (R * R / 2) * (angleRadians - Math.sin(angleRadians));
+        JOptionPane.showMessageDialog(null, "The area of the circle segment is: " + String.format("%.2f", area));
+       AnotherCalculation();
+    }
+
+    public static void surfaceAreaSphere() {
+        String radiusInput = JOptionPane.showInputDialog("Enter the radius of the sphere:");
+        if (radiusInput == null) { 
+            if (confirmExit()) return;
+        }
+        double radius = Double.parseDouble(radiusInput);
+        double surfaceArea = 4 * Math.PI * Math.pow(radius, 2);
+        JOptionPane.showMessageDialog(null, "The surface area of the sphere is: " + String.format("%.2f", surfaceArea));
+       AnotherCalculation();
+    }
+
+    public static void AnotherCalculation() {
+        int result = JOptionPane.showConfirmDialog(null, "Do you want to calculate another?", "Continue?", JOptionPane.YES_NO_OPTION);
+        if (result == JOptionPane.YES_OPTION) {
+        } else {
+            JOptionPane.showMessageDialog(null, "Goodbye!");
+            System.exit(0);
+        }
+    }
+
+    public static boolean confirmExit() {
+        int result = JOptionPane.showConfirmDialog(null, "Do you really want to quit?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
+        return result == JOptionPane.YES_OPTION;
     }
 }
