@@ -2,78 +2,248 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package array.implementation.and.pkgfor.loop.practice;
+package villacorta_jamesanthony_sumandaverage.array._problem1;
 
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Jassen
+ *Name: James Anthony Dicdican Villacorta
+ * Course: Computer Engineering
+ * Lab Activity: Array Implementation and For Loop Practice - Problem 1
+ * Submission Date: October 31, 2024
  */
-public class ArrayImplementationAndForLoopPractice {
+
+/**
+ * Program Comments:
+ * The program prompts the user to enter 15 numerical values through a graphical input dialog using JOptionPane.
+ * It stores these values in an array and calculates both the total sum and the average.
+ * 
+ */
+public class Villacorta_JamesAnthony_SumandAverageArray_Problem1 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
-
-    public static void sumandaverage() {
-         int count = 15;
+       int count = 10; // Array Count
         double number, sum = 0;
         double average = 0;
-        double [] numbers= new double [count];
+        double [] numbers= new double [count];// Array to store the numbers
         for (int i = 0; i < count; i++) {
-            String input = JOptionPane.showInputDialog("Enter number " + (i + 1) + ":");
+            String input = JOptionPane.showInputDialog("Enter number " + (i + 1) + ":");// Prompt user to enter a number
+            
+            try{
             numbers[i] = Double.parseDouble(input);
                     sum += numbers[i];
-                   average = sum / count; 
+                   average = sum / count; }   
+         catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
+                i--; // handle invalid input
+            }
+                   
+        if (input == null) {
+                JOptionPane.showMessageDialog(null, "Exiting the program.");
+                System.exit(0); 
+            }// if you want to cancel prompts user to exit
     }
-    String result = String.format("Sum of Numbers: %.2f\nAverage of Numbers: %.2f", sum, average);
+        
+        
+       
+    String result = String.format("Sum of Array: %.2f\nAverage of Array: %.2f", sum, average);
      JOptionPane.showMessageDialog(null, result);
-}
-    public static void MaxandMinElemFinder(){
-    int count = 15;
-        int[] numbers = new int[count]; 
+            }//Prints out the Answer 
+    }
+
+//Sample Input:
+//10 20 30 40 50 60 70 80 90 100
+//Sample Output:
+//Sum of Array:550.00
+//Average of Array:55.00
+    
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package villacorta_jamesanthony_maximunaandminimumfider_problem2;
+
+import javax.swing.JOptionPane;
+
+/**
+ *Name: James Anthony Dicdican Villacorta
+ * Course: Computer Engineering
+ * Lab Activity: Array Implementation and For Loop Practice - Problem 1
+ * Submission Date: October 31, 2024
+ */
+/**
+ * Program Comment:
+ * The Java program MinMaxCalculator allows users to input a specified number of integers (15 in this case)
+ * And calculates the maximum and minimum values among those inputs. 
+ * 
+ */
+public class Villacorta_JamesAnthony_MaximunaandMinimumFider_Problem2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       int count = 15;//number of values
+        int[] numbers = new int[count]; // Array to store the numbers
+        // Loop to get user input for 'count' number of times
         for (int i = 0; i < count; i++) {
-            String valueInput = JOptionPane.showInputDialog("Enter a number-"+ (i + 1) +":");
-            numbers[i] = Integer.parseInt(valueInput);
-        }
+            String valueInput = JOptionPane.showInputDialog("Enter a number-"+ (i + 1) +":");// Prompt user to enter a number
+            try{
+            numbers[i] = Integer.parseInt(valueInput);}
+             catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
+                i--; // handle invalid input
+            } if (valueInput == null) {
+                JOptionPane.showMessageDialog(null, "Exiting the program.");
+                System.exit(0); // Exit the program
+            }
+            
+    }
+        
         int max = numbers[0];
         int min = numbers[0];
         for (int num:numbers){
         if (num>max)    {
-        max = num;
+        max = num;//if the current number is greater
         }
         if (num<min){
-        min = num;
+        min = num;//if the current number is smaller
         }
         }
-        String result = String.format("Maximum: %d\nMinimum: %d", max, min);
-        JOptionPane.showMessageDialog(null, result);
+        String result = String.format("Maximum of Array: %d\nMinimum of Array: %d", max, min);
+        JOptionPane.showMessageDialog(null, result);// Display the result in a message dialog
     }
-    public static void ReverseanArray(String[]args){
-    int count= 5;
-    double [] numbers  = new double [count];
+    }
+
+//Sample Input:
+//10 20 30 40 50 60 70 80 90 100 110 120 130 140 150
+//Sample Output:
+//Maximum of Array:150
+//Minimum of Array:10
+    
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package villacorta_jamesanthony_reversedarray_problem3;
+
+import javax.swing.JOptionPane;
+
+/**
+ *Name: James Anthony Dicdican Villacorta
+ * Course: Computer Engineering
+ * Lab Activity: Array Implementation and For Loop Practice - Problem 1
+ * Submission Date: October 31, 2024
+ */
+/**
+ * Program Comment: The ReverseArray Java program allows users to input a specified number of decimal values (five in this case) 
+ * And then displays those values in reverse order. 
+ * 
+ */
+public class Villacorta_JamesAnthony_ReversedArray_Problem3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int count= 5;//number of values
+    double [] numbers  = new double [count];// Array to store the numbers
     for (int i = 0; i < count; i++ ){
-     String valueInput = JOptionPane.showInputDialog("Enter number " + (i + 1) + ":");
-     numbers[i] =  Double.parseDouble(valueInput);
+        // Loop to get user input for 'count' number of times
+     String valueInput = JOptionPane.showInputDialog("Enter number " + (i + 1) + ":"); // Prompt user to enter a number
+     try{
+     numbers[i] =  Double.parseDouble(valueInput);}
+      catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
+                i--; // handle invalid input
+            }if (valueInput == null) {
+                JOptionPane.showMessageDialog(null, "Exiting the program.");
+                System.exit(0); // Exit the program
+            }
+            
     }
      StringBuilder reversedResult = new StringBuilder("Reversed Array: ");
         for (int i = count - 1; i >= 0; i--) {
-            reversedResult.append(numbers[i]);
+            reversedResult.append(numbers[i]);  // Loop to reverse the order of numbers
             if (i > 0) {
-                reversedResult.append(", ");
+                reversedResult.append(", ");// Add a comma
             }
     }
-        JOptionPane.showMessageDialog(null, reversedResult.toString());
+        JOptionPane.showMessageDialog(null, reversedResult.toString());// Display the reversed array
+
+    }
+    
+}
+//Sample Input:
+//1.5 2.5 3.5 4.5 5.5
+//Sample Output:
+//Reversed Array: 5.5,4.5,3.5,2.5,1.5
 
 
-}   }
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package villacorta_jamesanthony_frequencycounter_problem4;
 
+import javax.swing.JOptionPane;
 
+/**
+ *Name: James Anthony Dicdican Villacorta
+ * Course: Computer Engineering
+ * Lab Activity: Array Implementation and For Loop Practice - Problem 1
+ * Submission Date: October 31, 2024
+ */
+/**
+ * Program Comment:
+ * 
+ */
+public class Villacorta_JamesAnthony_FrequencyCounter_Problem4 {
 
-
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+            int count = 10; // Number of elements
+        int[] numbers = new int[count]; // Array store the integers
+        for (int i = 0; i < count; i++) {
+            String input;
+            do {
+                input = JOptionPane.showInputDialog("Enter integer " + (i + 1) + " (between 1 and 100):");
+                if (input == null) {
+                    JOptionPane.showMessageDialog(null, "Exiting the program.");
+                    System.exit(0); // Exit the program
+                }
+            } while (!isValidInput(input)); // Repeat until valid 
+            numbers[i] = Integer.parseInt(input); // valid integer
+        }
+        String checkInput = JOptionPane.showInputDialog("Enter a number to check its frequency (between 1 and 100):");
+        int numberToCheck = Integer.parseInt(checkInput);
+        int frequency = 0;
+        for (int num : numbers) {
+            if (num == numberToCheck) {
+                frequency++;
+            }
+        }
+        // Display the result
+        String result = numberToCheck + " appears " + frequency + " times in the array.";
+        JOptionPane.showMessageDialog(null, result);
+    }
+    // Method for validate input
+    private static boolean isValidInput(String input) {
+        try {
+            int number = Integer.parseInt(input);
+            return number >= 1 && number <= 100; 
+        } catch (NumberFormatException e) {
+            return false; 
+        }
+    }
+}
+    
+    
 
