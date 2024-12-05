@@ -137,21 +137,21 @@ public class clacu1 extends javax.swing.JFrame {
         double num1= Double.parseDouble(text1.getText());
       double num2= Double.parseDouble(text2.getText());
        double num3=num1-num2;
-       c.setText(String.valueOf(num3));
+       c.setText(String.valueOf(num3));// Subtract the given numbers
     }//GEN-LAST:event_Button2ActionPerformed
 
     private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
          double num1= Double.parseDouble(text1.getText());
       double num2= Double.parseDouble(text2.getText());
        double num3=num1*num2;
-       c.setText(String.valueOf(num3));
+       c.setText(String.valueOf(num3));//     Multiply the given numbers
     }//GEN-LAST:event_Button3ActionPerformed
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
      double num1= Double.parseDouble(text1.getText());
       double num2= Double.parseDouble(text2.getText());
        double num3=num1+num2;
-       c.setText(String.valueOf(num3));
+       c.setText(String.valueOf(num3));// add the given numbers
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void text1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text1ActionPerformed
@@ -162,7 +162,7 @@ public class clacu1 extends javax.swing.JFrame {
         double num1= Double.parseDouble(text1.getText());
       double num2= Double.parseDouble(text2.getText());
        double num3=num1/num2;
-       c.setText(String.valueOf(num3));
+       c.setText(String.valueOf(num3));// divide the given numbers
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
