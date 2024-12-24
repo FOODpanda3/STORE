@@ -1,0 +1,12 @@
+2024-12-19T19:04:07.936061900 - Customer button clicked
+2024-12-19T19:08:08.844607900 - Customer button clicked
+2024-12-19T19:08:10.142148800 - Customer button clicked
+2024-12-19T19:08:10.325658 - Customer button clicked
+2024-12-19T19:08:10.494207200 - Customer button clicked
+2024-12-19T19:08:28.476041 - Customer button clicked
+2024-12-19T19:13:25.565195100 - Customer button clicked
+2024-12-19T19:15:35.427816 - Customer button clicked
+2024-12-19T19:17:16.268438500 - Customer button clicked
+2024-12-19T19:59:09.747480200 - Customer button clicked
+2024-12-19T19:59:27.306411600 - Customer button clicked
+2024-12-24T08:48:18.661861400 - Customer button clicked
